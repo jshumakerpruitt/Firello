@@ -31,7 +31,7 @@ App.propTypes = {
 
 const styles = {
   home: {
-    height: '100vh',
+    minHeight: '100vh',
     width: '100vw',
     backgroundColor: '#0079bf',
   },

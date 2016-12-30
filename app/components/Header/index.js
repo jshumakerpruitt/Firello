@@ -17,7 +17,8 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
       >
         <Flex style={styles.headerGroup} >
           <Button
-            backgroundColor="primary"
+            style={ styles.boardsButton}
+            backgroundColor='#4590bc'
             color="white"
             inverted
             rounded
@@ -25,26 +26,30 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
           Boards
           </Button>
           <Button
-            backgroundColor="primary"
+            style={styles.search}
+            backgroundColor='#4590bc'
             color="white"
             inverted
             rounded
           >
-          search
+          Search
           </Button>
         </Flex>
         <Flex
           style={styles.headerGroup}
           justify="center"
         >
+          <h2 style={styles.logo}>
         Trello
+            </h2>
         </Flex>
         <Flex
           style={styles.headerGroup}
           justify="flex-end"
         >
           <Button
-            backgroundColor="primary"
+            style={styles.headerButton}
+            backgroundColor='#4590bc'
             color="white"
             inverted
             rounded
@@ -52,7 +57,8 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
           add
           </Button>
           <Button
-            backgroundColor="primary"
+            style={styles.headerButton}
+            backgroundColor='#4590bc'
             color="white"
             inverted
             rounded
@@ -60,7 +66,8 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
           profile
           </Button>
           <Button
-            backgroundColor="primary"
+            style={styles.headerButton}
+            backgroundColor='#4590bc'
             color="white"
             inverted
             rounded
@@ -68,8 +75,8 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
           info
           </Button>
           <Button
-            backgroundColor="primary"
-            color="white"
+            style={styles.bell}
+            backgroundColor='#4590bc'
             inverted
             rounded
           >
@@ -85,13 +92,32 @@ const styles = {
   header: {
     height: '40px',
     backgroundColor: '#026aa7',
-    color: 'white',
+    color: '#7fb3d1',
     width: '100%',
   },
   headerGroup: {
     flex: 1,
   },
   logoWrapper: {
+  },
+  boardsButton: {
+    width: '92px',
+    marginLeft: '5px',
+  },
+  search: {
+    width: '182px',
+    marginLeft: '7px',
+  },
+  headerButton: {
+    marginLeft: '7px',
+  },
+  logo: {
+    fontFamily: "'Yellowtail', cursive",
+    color: '#7fb3d1',
+  },
+  bell: {
+    marginLeft: '7px',
+    marginRight: '5px',
   },
 };
 

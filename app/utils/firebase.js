@@ -17,3 +17,6 @@ export const signUp = (email, password) =>
 
 export const signIn = (action) =>
   auth.signInWithEmailAndPassword(action.email, action.password);
+
+export const createDb = (name) =>
+  firebase.database().ref().child(name)

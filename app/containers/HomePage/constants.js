@@ -11,4 +11,4 @@
 
 export const SUBMIT_SIGNUP = 'boilerplate/Home/SUBMIT_SIGNUP';
 export const SUBMIT_SIGNIN = 'boilerplate/Home/SUBMIT_SIGNIN';
-export const RECEIVE_SIGNIN = 'boilerplate/Home/RECEIVE_SIGNIN';
+export const SIGNIN_SUCCESS = 'boilerplate/Home/SIGNIN_SUCCESS';
