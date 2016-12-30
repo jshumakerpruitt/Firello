@@ -5,33 +5,33 @@
  */
 
 import React, { Component } from 'react';
-import { Flex } from 'reflexbox'
+import { Flex } from 'reflexbox';
 import {
   Input,
   Button,
-} from 'rebass'
+} from 'rebass';
 
 const submitSignup = () => {
-  console.log('submit')
-}
+  console.log('submit');
+};
 
 class SignupBox extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       email: '',
       password: '',
-    }
-    this.signUp = this.signUp.bind(this)
+    };
+    this.signUp = this.signUp.bind(this);
   }
 
   componentDidMount() {
-    //this.props.auth.signOut()
+    // this.props.auth.signOut()
   }
 
   signUp() {
     // .createUserWithEmailAndPassword(this.state.email, this.state.password)
-    this.props.submitSignup(this.state.email, this.state.password)
+    this.props.submitSignup(this.state.email, this.state.password);
 /*
     this.props
           .auth
@@ -39,7 +39,6 @@ class SignupBox extends Component {
     .then(x => { console.log('resolved', this.props.auth.currentUser)})
     console.log('user: ', this.props.auth.currentUser)
     */
-
   }
 
   render() {
@@ -47,13 +46,13 @@ class SignupBox extends Component {
       <Flex
         style={styles.signupBox}
         flexColumn
-        justify='center'
+        justify="center"
       >
         <Flex
           flexColumn
         >
           <Input
-            onChange={(e) => {this.setState({email: e.target.value})}}
+            onChange={(e) => { this.setState({ email: e.target.value }); }}
             hideLabel
             label="Email"
             name="email"
@@ -63,7 +62,7 @@ class SignupBox extends Component {
 
           />
           <Input
-            onChange={(e) => {this.setState({password: e.target.value})}}
+            onChange={(e) => { this.setState({ password: e.target.value }); }}
             hideLabel
             label="Password"
             name="password"
@@ -89,7 +88,7 @@ const styles = {
   },
   border: {
     border: '1px solid black',
-  }
-}
+  },
+};
 
 export default SignupBox;

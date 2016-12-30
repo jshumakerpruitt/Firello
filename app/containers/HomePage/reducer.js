@@ -24,7 +24,7 @@ const initialState = fromJS({
 function homeReducer(state = initialState, action) {
   switch (action.type) {
     case SUBMIT_SIGNUP:
-      return state.set('token', action.token)
+      return state.set('token', action.token);
     default:
       return state;
   }

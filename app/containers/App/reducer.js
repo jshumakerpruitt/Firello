@@ -1,20 +1,9 @@
-/*
- * AppReducer
- *
- * The reducer takes care of our data. Using actions, we can change our
- * application state.
- * To add a new action, add it to the switch statement in the reducer function
- *
- * Example:
- * case YOUR_ACTION_CONSTANT:
- *   return state.set('yourStateVariable', true);
- */
-
 import {
   LOAD_REPOS_SUCCESS,
   LOAD_REPOS,
   LOAD_REPOS_ERROR,
 } from './constants';
+
 import { fromJS } from 'immutable';
 
 // The initial state of the App
@@ -43,6 +32,9 @@ function appReducer(state = initialState, action) {
       return state
         .set('error', action.error)
         .set('loading', false);
+    case SIGNIN_SUCCESS:
+      return state
+        .set('currentUser', action.user);
     default:
       return state;
   }

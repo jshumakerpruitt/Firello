@@ -1,9 +1,9 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { Flex } from 'reflexbox'
+import { Flex } from 'reflexbox';
 import {
   Button,
-} from 'rebass'
+} from 'rebass';
 
 import messages from './messages';
 
@@ -12,69 +12,69 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
     return (
       <Flex
         style={styles.header}
-        align='center'
-        justify='space-between'
+        align="center"
+        justify="space-between"
       >
         <Flex style={styles.headerGroup} >
-        <Button
-          backgroundColor="primary"
-          color="white"
-          inverted
-          rounded
-        >
+          <Button
+            backgroundColor="primary"
+            color="white"
+            inverted
+            rounded
+          >
           Boards
-        </Button>
-        <Button
-          backgroundColor="primary"
-          color="white"
-          inverted
-          rounded
-        >
+          </Button>
+          <Button
+            backgroundColor="primary"
+            color="white"
+            inverted
+            rounded
+          >
           search
-        </Button>
+          </Button>
         </Flex>
         <Flex
           style={styles.headerGroup}
-          justify='center'
+          justify="center"
         >
         Trello
         </Flex>
         <Flex
           style={styles.headerGroup}
-          justify='flex-end'
+          justify="flex-end"
         >
-        <Button
-          backgroundColor="primary"
-          color="white"
-          inverted
-          rounded
-        >
+          <Button
+            backgroundColor="primary"
+            color="white"
+            inverted
+            rounded
+          >
           add
-        </Button>
-        <Button
-          backgroundColor="primary"
-          color="white"
-          inverted
-          rounded
-        >
+          </Button>
+          <Button
+            backgroundColor="primary"
+            color="white"
+            inverted
+            rounded
+          >
           profile
-        </Button>
-        <Button
-          backgroundColor="primary"
-          color="white"
-          inverted
-          rounded
-        >
+          </Button>
+          <Button
+            backgroundColor="primary"
+            color="white"
+            inverted
+            rounded
+          >
           info
-        </Button>
-        <Button
-          backgroundColor="primary"
-          color="white"
-          inverted
-          rounded
-        >
+          </Button>
+          <Button
+            backgroundColor="primary"
+            color="white"
+            inverted
+            rounded
+          >
           bell
-        </Button>
+          </Button>
         </Flex>
       </Flex>
     );
@@ -86,13 +86,13 @@ const styles = {
     height: '40px',
     backgroundColor: '#026aa7',
     color: 'white',
-    width: '100%'
+    width: '100%',
   },
   headerGroup: {
     flex: 1,
   },
   logoWrapper: {
-  }
-}
+  },
+};
 
 export default Header;
