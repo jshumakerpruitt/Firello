@@ -16,7 +16,7 @@
  */
 
 import {
-  CHANGE_USERNAME,
+  SUBMIT_SIGNUP,
 } from './constants';
 
 /**
@@ -26,9 +26,8 @@ import {
  *
  * @return {object}    An action object with a type of CHANGE_USERNAME
  */
-export function changeUsername(name) {
-  return {
-    type: CHANGE_USERNAME,
-    name,
-  };
-}
+export const submitSignup = (email, password) => ({
+    type: SUBMIT_SIGNUP,
+    email,
+    password,
+})

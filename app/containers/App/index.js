@@ -3,12 +3,11 @@ import Helmet from 'react-helmet';
 import { Flex } from 'reflexbox'
 
 import Header from 'components/Header';
-import Footer from 'components/Footer';
 
 function App(props) {
   return (
     <Flex
-      style={{height: '100vh'}}
+      style={styles.home}
       flexColumn
       align='center'
     >
@@ -16,9 +15,12 @@ function App(props) {
       <Flex
         flexAuto
       >
+        <Flex
+          flexAuto
+          >
         {React.Children.toArray(props.children)}
       </Flex>
-      <Footer />
+      </Flex>
     </Flex>
   );
 }
@@ -27,4 +29,11 @@ App.propTypes = {
   children: React.PropTypes.node,
 };
 
+const styles={
+  home: {
+    height: '100vh',
+    width: '100vw',
+    backgroundColor: '#0079bf',
+  },
+}
 export default App;

@@ -11,22 +11,20 @@
  */
 
 import {
-  CHANGE_USERNAME,
+  SUBMIT_SIGNUP,
 } from './constants';
+
 import { fromJS } from 'immutable';
 
 // The initial state of the App
 const initialState = fromJS({
-  username: '',
+  token: null,
 });
 
 function homeReducer(state = initialState, action) {
   switch (action.type) {
-    case CHANGE_USERNAME:
-
-      // Delete prefixed '@' from the github username
-      return state
-        .set('username', action.name.replace(/@/gi, ''));
+    case SUBMIT_SIGNUP:
+      return state.set('token', action.token)
     default:
       return state;
   }
