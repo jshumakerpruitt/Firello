@@ -1,8 +1,5 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 import { Flex } from 'reflexbox';
-
-import messages from './messages';
 
 function Footer() {
   return (

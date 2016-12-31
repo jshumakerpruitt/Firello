@@ -19,4 +19,4 @@ export const signIn = (action) =>
   auth.signInWithEmailAndPassword(action.email, action.password);
 
 export const createDb = (name) =>
-  firebase.database().ref().child(name)
+  firebase.database().ref().child(name);

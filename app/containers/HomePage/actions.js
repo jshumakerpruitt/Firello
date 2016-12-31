@@ -6,6 +6,7 @@
 import {
   SUBMIT_SIGNUP,
   SUBMIT_SIGNIN,
+  SIGNIN_SUCCESS,
 } from './constants';
 
 export const submitSignUp = (email, password) => ({
@@ -20,7 +21,7 @@ export const submitSignIn = (email, password) => ({
   password,
 });
 
-export const receiveSignIn = (user) => ({
-  type: RECEIVE_SIGNIN,
+export const signinSuccess = (user) => ({
+  type: SIGNIN_SUCCESS,
   user,
 });

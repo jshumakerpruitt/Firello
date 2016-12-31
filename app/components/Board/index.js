@@ -5,10 +5,10 @@
  */
 
 import React from 'react';
-import { Flex } from 'reflexbox'
-import uuid from 'uuid/v4'
+import { Flex } from 'reflexbox';
+import uuid from 'uuid/v4';
 
-import Item from 'components/Item'
+import Item from 'components/Item';
 
 
 const Board = (props) => (
@@ -21,9 +21,9 @@ const Board = (props) => (
       p={1}
       style={styles.listTitle}
     >ListName</Flex>
-    {props.items.map(item => <Item key={uuid()}>item</Item>)}
+    {props.items.map((item) => <Item key={uuid()} item={item} />)}
   </Flex>
-)
+);
 const styles = {
   board: {
     backgroundColor: '#e2e4e6',
@@ -34,9 +34,13 @@ const styles = {
   },
   listTitle: {
     fontFamily: '"Helvetica Neue", Arial, Helvetica, sans-serif',
-    fontWeight: 500,
+    fontWeight: 600,
     fontSize: '14px',
     color: '#4d4d4d',
-  }
-}
+  },
+};
+
+Board.propTypes = {
+  items: React.PropTypes.array,
+};
 export default Board;

@@ -3,16 +3,12 @@
  */
 
 import { takeLatest } from 'redux-saga';
-import { take, call, put, select, fork, cancel } from 'redux-saga/effects';
+import { take, call, put, fork, cancel } from 'redux-saga/effects';
 import { LOCATION_CHANGE } from 'react-router-redux';
 import {
   SUBMIT_SIGNUP,
   SUBMIT_SIGNIN,
 } from 'containers/HomePage/constants';
-import {
-  reposLoaded,
-  repoLoadingError,
-} from 'containers/App/actions';
 
 import {
   auth,
@@ -23,13 +19,11 @@ import {
  * Github repos request/response handler
  */
 export function* submitSignup(action) {
-  const signIn = (action) => {
-    auth.signInWithEmailAndPassword(action.email, action.password);
-  };
-
   try {
     const response = yield call(signIn, action);
-    yield put({ type: 'SIGNUP_SUCCESS', user: auth.currentUser });
+    if (response) {
+      yield put({ type: 'SIGNUP_SUCCESS', user: auth.currentUser });
+    }
   } catch (err) {
     yield put({ type: 'OOPS' });
   }
@@ -58,10 +52,13 @@ export function* signupData() {
 export function* submitSignIn(action) {
   try {
     const response = yield call(signIn, action);
+    if (response) {
+      yield put({ type: 'SIGNUP_SUCCESS', user: auth.currentUser });
+    }
+
     yield put({ type: 'SIGNUP_SUCCESS', user: auth.currentUser });
   } catch (err) {
-    console.log(err);
-    yield put({ type: 'OOPS' });
+    yield put({ type: 'SIGNIN_ERROR', err });
   }
 }
 

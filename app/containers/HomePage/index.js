@@ -14,11 +14,9 @@ import { Flex } from 'reflexbox';
 import { } from '../App/actions';
 import { } from './selectors';
 import { } from 'containers/App/selectors';
-import SignupBox from 'components/SignupBox';
 import Board from 'components/Board';
 import MenuHeader from 'components/MenuHeader';
-import {createDb } from 'utils/firebase' 
-import * as firebase from 'firebase'
+import * as firebase from 'firebase';
 
 
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -28,13 +26,13 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
   }
 
   componentDidMount() {
-    const dbRef = firebase.database().ref().child('react')
-    const speedRef = dbRef.child('speed')
-    speedRef.on('value', snap => {
+    const dbRef = firebase.database().ref().child('react');
+    const speedRef = dbRef.child('speed');
+    speedRef.on('value', (snap) => {
       this.setState({
         speed: snap.val(),
-      })
-    })
+      });
+    });
   }
 
   render() {
@@ -42,25 +40,28 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
       <Flex
         style={styles.homePage}
         px={1}
-        align='flex-start'
         flexColumn
+        flexAuto
+        justify="flex-start"
       >
-        <MenuHeader /> 
-        <Flex>
+        <MenuHeader />
+        <Flex
+          style={styles.cards}
+        >
           <Flex
             flexColumn
           >
-            <Board items={[1,1,1,1,1,1,1]}/>
+            <Board items={[1, 2, 3, 4, 5, 6, 7]} />
           </Flex>
           <Flex
             flexColumn
           >
-            <Board items={[1,1,1,1,1,1]}/>
+            <Board items={[1, 1, 1, 1, 1, 1]} />
           </Flex>
           <Flex
             flexColumn
           >
-            <Board items={[1,1,1,1,1,1,1,1,1,1]}/>
+            <Board items={[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]} />
           </Flex>
         </Flex>
       </Flex>
@@ -70,7 +71,10 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
 
 const styles = {
   homePage: {
-    width: '100vw',
+  },
+  cards: {
+    position: 'absolute',
+    top: 86,
   },
 };
 

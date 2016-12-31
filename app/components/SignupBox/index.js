@@ -11,11 +11,11 @@ import {
   Button,
 } from 'rebass';
 
-const submitSignup = () => {
-  console.log('submit');
-};
-
 class SignupBox extends Component {
+  static propTypes = {
+    submitSignup: React.PropTypes.func,
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -25,9 +25,6 @@ class SignupBox extends Component {
     this.signUp = this.signUp.bind(this);
   }
 
-  componentDidMount() {
-    // this.props.auth.signOut()
-  }
 
   signUp() {
     // .createUserWithEmailAndPassword(this.state.email, this.state.password)

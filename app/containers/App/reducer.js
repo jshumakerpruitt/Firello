@@ -4,7 +4,7 @@ import {
   LOAD_REPOS_ERROR,
 } from './constants';
 
-import { SIGNIN_SUCCESS } from 'containers/HomePage/constants'
+import { SIGNIN_SUCCESS } from 'containers/HomePage/constants';
 
 import { fromJS } from 'immutable';
 

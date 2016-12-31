@@ -1,5 +1,4 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import { Flex } from 'reflexbox';
 
 import Header from 'components/Header';
@@ -14,6 +13,7 @@ function App(props) {
       <Header />
       <Flex
         flexAuto
+        style={styles.stretchY}
       >
         <Flex
           flexAuto
@@ -31,9 +31,13 @@ App.propTypes = {
 
 const styles = {
   home: {
+    boxSizing: 'border-box',
     minHeight: '100vh',
-    width: '100vw',
+    width: '100%',
     backgroundColor: '#0079bf',
+  },
+  stretchY: {
+    width: '100%',
   },
 };
 export default App;

@@ -1,11 +1,10 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+
 import { Flex } from 'reflexbox';
 import {
   Button,
 } from 'rebass';
-
-import messages from './messages';
+import Icon from 'react-geomicons';
 
 class Header extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -17,70 +16,88 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
       >
         <Flex style={styles.headerGroup} >
           <Button
-            style={ styles.boardsButton}
-            backgroundColor='#4590bc'
+            style={styles.boardsButton}
+            backgroundColor="#4590bc"
             color="white"
             inverted
             rounded
+            p={1}
           >
-          Boards
+            <Flex
+              flexAuto
+              align="center"
+            >
+              <Icon style={styles.buttonIcon} name="bookmark" />
+              Boards
+            </Flex>
           </Button>
-          <Button
-            style={styles.search}
-            backgroundColor='#4590bc'
-            color="white"
-            inverted
-            rounded
+          <Flex
+            style={styles.searchContainer}
+            p={0}
+            m={0}
           >
-          Search
-          </Button>
+            <input
+              style={styles.searchInput}
+              name="input_example"
+              type="text"
+            />
+            <Button
+              style={styles.search}
+              backgroundColor="#4590bc"
+              color="white"
+              inverted
+              rounded
+            >
+              <Icon name="search" style={styles.searchIcon} />
+            </Button>
+          </Flex>
         </Flex>
         <Flex
           style={styles.headerGroup}
           justify="center"
         >
           <h2 style={styles.logo}>
-        Trello
-            </h2>
+            Trello
+          </h2>
         </Flex>
         <Flex
           style={styles.headerGroup}
           justify="flex-end"
         >
           <Button
-            style={styles.headerButton}
-            backgroundColor='#4590bc'
+            style={styles.plusButton}
+            backgroundColor="#4590bc"
             color="white"
             inverted
             rounded
           >
-          add
+            <span style={styles.plus}>+</span>
           </Button>
           <Button
             style={styles.headerButton}
-            backgroundColor='#4590bc'
+            backgroundColor="#4590bc"
             color="white"
             inverted
             rounded
           >
-          profile
+            profile
           </Button>
           <Button
             style={styles.headerButton}
-            backgroundColor='#4590bc'
+            backgroundColor="#4590bc"
             color="white"
             inverted
             rounded
           >
-          info
+            <Icon name="info" />
           </Button>
           <Button
             style={styles.bell}
-            backgroundColor='#4590bc'
+            backgroundColor="#4590bc"
             inverted
             rounded
           >
-          bell
+            <Icon name="chat" />
           </Button>
         </Flex>
       </Flex>
@@ -103,10 +120,12 @@ const styles = {
   boardsButton: {
     width: '92px',
     marginLeft: '5px',
+    marginRight: '6px',
   },
   search: {
-    width: '182px',
-    marginLeft: '7px',
+    padding: '5px',
+    borderTopLeftRadius: 0,
+    borderBottomLeftRadius: 0,
   },
   headerButton: {
     marginLeft: '7px',
@@ -117,7 +136,34 @@ const styles = {
   },
   bell: {
     marginLeft: '7px',
-    marginRight: '5px',
+    marginRight: '7px',
+  },
+  buttonIcon: {
+    marginRight: '7px',
+  },
+  searchInput: {
+    borderTopLeftRadius: '2px',
+    borderBottomLeftRadius: '2px',
+    flex: 1,
+    border: '0',
+    marginRight: '0',
+    paddingRight: '0',
+    backgroundColor: '#4590bc',
+  },
+  searchIcon: {
+    width: '24px',
+  },
+  plus: {
+    fontWeight: 200,
+    fontSize: '32px',
+    display: 'flex',
+  },
+  plusButton: {
+    paddingRight: '7px',
+    paddingLeft: '7px',
+    height: '10px',
+    display: 'flex',
+    alignItems: 'center',
   },
 };
 
