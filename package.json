@@ -1,15 +1,16 @@
 {
-  "name": "Firello",
+  "name": "react-boilerplate",
   "version": "3.3.3",
-  "description": "Trello Clone built with React.js and Firebase",
+  "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
   "repository": {
     "type": "git",
-    "url": "git://github.com/jshumakerpruitt/Firello"
+    "url": "git://github.com/mxstbr/react-boilerplate.git"
   },
   "engines": {
     "npm": ">=3"
   },
-  "author": "Jasper Shumaker-Pruitt",
+  "author": "Max Stoiber",
+  "license": "MIT",
   "scripts": {
     "analyze:clean": "rimraf stats.json",
     "preanalyze": "npm run analyze:clean",
